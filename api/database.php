@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include '../config.php';
 
 mysql_connect($database['host'],$database['username'],$database['password']) or die(mysql_error()) ;
 
