@@ -1,7 +1,13 @@
 <?php
 
-include '../config.php';
+function getConnection() {
 
-mysql_connect($database['host'],$database['username'],$database['password']) or die(mysql_error()) ;
+	include '../config.php';
 
-mysql_select_db($database['database']) or die(mysql_error()) ; 
+    $dbh = new PDO("mysql:host={$config['host']};dbname={$config['database']}",$config['username'],$config['password']);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbh->exec("SET CHARACTER SET utf8");
+
+    return $dbh;
+
+}
