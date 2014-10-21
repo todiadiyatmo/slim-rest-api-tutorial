@@ -58,7 +58,7 @@ $app->post('/cities/', function() use ($app) {
 	$data['name'] = $_POST['name'];
 
 	// Remember to encode the data to json when calling the API on the other side
-	$request = Requests::post($config['api_url'].'/cities'.$id, $headers,json_encode($data));
+	$request = Requests::post($config['api_url'].'/cities', $headers,json_encode($data));
 
 	echo $request->body;
 
