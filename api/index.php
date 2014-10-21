@@ -97,7 +97,7 @@ $app->put('/cities/:id', function($id) use ($app) {
     }
 });
    
-// Update single city by :id
+// Delete single city by :id
 $app->delete('/cities/:id', function($id) use ($app) {
 
     // Set JSON Header
